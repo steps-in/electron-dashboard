@@ -9,7 +9,13 @@
 	"keywords": [],
 	"author": "soomtong@gmail.com",
 	"dependencies": {
+		"chart.js": "^2.7.1",
+		"date-fns": "^1.29.0",
 		"vue": "^2.5.13",
+		"vue-c3": "^1.1.1",
+		"vue-chartist": "^2.1.2",
+		"vue-chartjs": "^3.0.2",
+		"vue-slider-component": "^2.4.7",
 		"vueify": "^9.4.1"
 	},
 	"devDependencies": {

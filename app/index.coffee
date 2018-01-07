@@ -1,11 +1,9 @@
-console.log 'i am a coffee maker!'
-
 Vue = require 'vue'
-Example = require './component/example.vue'
+Main = require './component/main-wrap.vue'
 
 new Vue
     el: '#app'
     components:
-        container: Example
+        container: Main
     render: (h) ->
         return h 'container', {}

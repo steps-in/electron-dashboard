@@ -9,8 +9,8 @@ let mainWindow;
 
 function createWindow() {
 	let options = {
-		width: 1400,
-		height: 800,
+		width: 1680,
+		height: 912,
 		minWidth: 1200,
 		minHeight: 600
 	};
@@ -18,7 +18,7 @@ function createWindow() {
 	mainWindow = new BrowserWindow(options);
 
 	mainWindow.loadURL(url.format({
-		pathname: path.join(__dirname, 'index.html'),
+		pathname: path.join(__dirname, 'index.jade'),
 		protocol: 'file:',
 		slashes: true
 	}));
