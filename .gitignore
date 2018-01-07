@@ -1,0 +1,37 @@
+# environment
+
+*.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.pid
+*.seed
+*.pid.lock
+
+# development tools
+
+.vscode/
+.idea/
+.npm
+.eslintcache
+*.iws
+*.log
+package-lock.json
+node_modules/
+jspm_packages/
+
+# build
+
+build/
+dist/
+.nuxt/
+lib-cov
+coverage/
+build/Release
+.node_repl_history
+.yarn-integrity
+*.tgz
+
+# project
+
+config.json
