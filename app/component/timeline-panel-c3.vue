@@ -90,16 +90,19 @@
 			@chartHandler2.$emit 'init', chartData2
 		methods:
 			updateGraph: (msg)->
-				realTimeData1.next (newData) =>
-					@chartHandler1.$emit 'dispatch', (chart) =>
-						chart.flow
-							length: 1
-							columns: newData
+				controlEl = document.querySelector('#wrap').dataset.control
 
-				realTimeData2.next (newData) =>
-					@chartHandler2.$emit 'dispatch', (chart) =>
-						chart.flow
-							length: 1
-							columns: newData
+				if controlEl == 'start'
+					realTimeData1.next (newData) =>
+						@chartHandler1.$emit 'dispatch', (chart) =>
+							chart.flow
+								length: 1
+								columns: newData
+
+					realTimeData2.next (newData) =>
+						@chartHandler2.$emit 'dispatch', (chart) =>
+							chart.flow
+								length: 1
+								columns: newData
 
 </script>

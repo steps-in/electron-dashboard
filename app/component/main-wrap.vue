@@ -50,14 +50,14 @@
 </style>
 
 <script lang="coffee">
-	appTitle = "Electron Dashboard"
-	condition = "Your Vue.js App"
+    appTitle = "Electron Dashboard"
+    condition = "Your Vue.js App"
 
-	controlPanel = require './control-panel.vue'
-	timelinePanel = require './timeline-panel-c3.vue'
-	realtimePanel = require './realtime-panel-chartjs.vue'
+    controlPanel = require './control-panel.vue'
+    timelinePanel = require './timeline-panel-chartist.vue'
+    realtimePanel = require './realtime-panel-chartist.vue'
 
-	module.exports =
-		components: { controlPanel, timelinePanel, realtimePanel }
-		data: () -> { appTitle, msg: condition }
+    module.exports =
+        components: { controlPanel, timelinePanel, realtimePanel }
+        data: () -> { appTitle, msg: condition }
 </script>

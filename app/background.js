@@ -1,9 +1,7 @@
-const electron = require('electron');
 const path = require('path');
 const url = require('url');
-
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
+const { app, BrowserWindow, Menu } = require('electron');
+const mainMenu = require('./lib/main/menu');
 
 let mainWindow;
 
@@ -29,6 +27,10 @@ function createWindow() {
 	mainWindow.on('closed', function () {
 		mainWindow = null
 	})
+
+	let menuTemplate = mainMenu.getTemplate()
+
+	Menu.setApplicationMenu(Menu.buildFromTemplate(menuTemplate));
 }
 
 app.on('ready', createWindow);

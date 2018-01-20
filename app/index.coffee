@@ -1,3 +1,6 @@
+ipcListener = require './lib/renderer/listener'
+ipcListener.start()
+
 Vue = require 'vue'
 Main = require './component/main-wrap.vue'
 

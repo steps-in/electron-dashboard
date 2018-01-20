@@ -68,27 +68,29 @@
 
 			setInterval () =>
 				@updateGraph('loop')
-			,1000
+			, 1000
 		methods:
 			updateGraph: (msg)->
-				data1 = realTimeData1.next()
+				controlEl = document.querySelector('#wrap').dataset.control
 
-				@chartData1.labels.push data1.labels
-				@chartData1.series.map (series, index) ->
-					series.push data1.series[index]
+				if controlEl == 'start'
+					data1 = realTimeData1.next()
 
-				@chartData1.labels.shift() if @chartData1.labels.length > graphLimit
-				@chartData1.series.map (series) ->
-					series.shift() if series.length > graphLimit
+					@chartData1.labels.push data1.labels
+					@chartData1.series.map (series, index) ->
+						series.push data1.series[index]
 
-				data2 = realTimeData2.next()
+					@chartData1.labels.shift() if @chartData1.labels.length > graphLimit
+					@chartData1.series.map (series) ->
+						series.shift() if series.length > graphLimit
 
-				@chartData2.labels.push data2.labels
-				@chartData2.series.map (series, index) ->
-					series.push data2.series[index]
+					data2 = realTimeData2.next()
 
-				@chartData2.labels.shift() if @chartData2.labels.length > graphLimit
-				@chartData2.series.map (series) ->
-					series.shift() if series.length > graphLimit
+					@chartData2.labels.push data2.labels
+					@chartData2.series.map (series, index) ->
+						series.push data2.series[index]
 
+					@chartData2.labels.shift() if @chartData2.labels.length > graphLimit
+					@chartData2.series.map (series) ->
+						series.shift() if series.length > graphLimit
 </script>

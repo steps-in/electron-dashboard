@@ -47,34 +47,37 @@
 
 			setInterval () =>
 				@updateGraph('loop')
-			,1000
+			, 1000
 		methods:
 			updateGraph: (msg) ->
-				data1 = realTimeData1.next()
+				controlEl = document.querySelector('#wrap').dataset.control
 
-				chartData1.labels.push data1.label
-				chartData1.datasets.map (set, index) ->
-					set.data.push data1.set[index]
+				if controlEl == 'start'
+					data1 = realTimeData1.next()
 
-				chartData1.labels.shift() if chartData1.labels.length > graphLimit
-				chartData1.datasets.map (sets) ->
-					sets.data.shift() if sets.data.length > graphLimit
+					chartData1.labels.push data1.label
+					chartData1.datasets.map (set, index) ->
+						set.data.push data1.set[index]
 
-				@chartData1 =
-					labels: chartData1.labels
-					datasets: chartData1.datasets
+					chartData1.labels.shift() if chartData1.labels.length > graphLimit
+					chartData1.datasets.map (sets) ->
+						sets.data.shift() if sets.data.length > graphLimit
 
-				data2 = realTimeData2.next()
+					@chartData1 =
+						labels: chartData1.labels
+						datasets: chartData1.datasets
 
-				chartData2.labels.push data2.label
-				chartData2.datasets.map (set, index) ->
-					set.data.push data2.set[index]
+					data2 = realTimeData2.next()
 
-				chartData2.labels.shift() if chartData2.labels.length > graphLimit
-				chartData2.datasets.map (sets) ->
-					sets.data.shift() if sets.data.length > graphLimit
+					chartData2.labels.push data2.label
+					chartData2.datasets.map (set, index) ->
+						set.data.push data2.set[index]
 
-				@chartData2 =
-					labels: chartData2.labels
-					datasets: chartData2.datasets
+					chartData2.labels.shift() if chartData2.labels.length > graphLimit
+					chartData2.datasets.map (sets) ->
+						sets.data.shift() if sets.data.length > graphLimit
+
+					@chartData2 =
+						labels: chartData2.labels
+						datasets: chartData2.datasets
 </script>
